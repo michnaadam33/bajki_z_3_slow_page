@@ -35,9 +35,5 @@
       "src": "/(.*)",
       "dest": "/index.html"
     }
-  ],
-  "env": {
-    "RESEND_API_KEY": "@resend-api-key",
-    "ADMIN_EMAIL": "@admin-email"
-  }
+  ]
 }
