@@ -1,319 +1,531 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bajki z Trzech Słów - Magiczne historie dla Twojego dziecka</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Quicksand', sans-serif;
-        }
-        .heading-font {
-            font-family: 'Comfortaa', cursive;
-        }
-        .float-animation {
-            animation: float 3s ease-in-out infinite;
-        }
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-        .twinkle {
-            animation: twinkle 2s ease-in-out infinite;
-        }
-        @keyframes twinkle {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 1; }
-        }
-        .gradient-bg {
-            background: linear-gradient(180deg, #FFF5E6 0%, #FFE4E1 50%, #F0E6FF 100%);
-        }
-        .card-shadow {
-            box-shadow: 0 10px 30px rgba(147, 112, 219, 0.1);
-        }
-    </style>
-</head>
-<body class="gradient-bg min-h-screen">
-    <!-- Decorative elements -->
-    <div class="fixed inset-0 overflow-hidden pointer-events-none">
-        <div class="absolute top-10 left-10 text-6xl twinkle">⭐</div>
-        <div class="absolute top-32 right-20 text-4xl twinkle" style="animation-delay: 0.5s;">✨</div>
-        <div class="absolute bottom-20 left-20 text-5xl twinkle" style="animation-delay: 1s;">🌟</div>
-        <div class="absolute top-1/2 right-10 text-3xl twinkle" style="animation-delay: 1.5s;">⭐</div>
-        <div class="absolute bottom-40 right-1/3 text-4xl opacity-20">☁️</div>
-        <div class="absolute top-1/3 left-1/4 text-6xl opacity-10">☁️</div>
-    </div>
-
-    <!-- Navigation -->
-    <nav class="relative z-10 py-6 px-4">
-        <div class="max-w-6xl mx-auto flex justify-between items-center">
-            <div class="heading-font text-2xl md:text-3xl font-bold text-purple-700">
-                Bajki z Trzech Słów 📚✨
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>
+            Bajki z Trzech Słów - Magiczne historie dla Twojego dziecka
+        </title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&family=Quicksand:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="styles.css" />
+        <style>
+            body {
+                font-family: "Quicksand", sans-serif;
+            }
+            .heading-font {
+                font-family: "Comfortaa", cursive;
+            }
+            .float-animation {
+                animation: float 3s ease-in-out infinite;
+            }
+            @keyframes float {
+                0%,
+                100% {
+                    transform: translateY(0px);
+                }
+                50% {
+                    transform: translateY(-10px);
+                }
+            }
+            .twinkle {
+                animation: twinkle 2s ease-in-out infinite;
+            }
+            @keyframes twinkle {
+                0%,
+                100% {
+                    opacity: 0.3;
+                }
+                50% {
+                    opacity: 1;
+                }
+            }
+            .gradient-bg {
+                background: linear-gradient(
+                    180deg,
+                    #fff5e6 0%,
+                    #ffe4e1 50%,
+                    #f0e6ff 100%
+                );
+            }
+            .card-shadow {
+                box-shadow: 0 10px 30px rgba(147, 112, 219, 0.1);
+            }
+        </style>
+    </head>
+    <body class="gradient-bg min-h-screen">
+        <!-- Decorative elements -->
+        <div class="fixed inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute top-10 left-10 text-6xl twinkle">⭐</div>
+            <div
+                class="absolute top-32 right-20 text-4xl twinkle"
+                style="animation-delay: 0.5s"
+            >
+                ✨
             </div>
-            <button class="bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 md:px-6 md:py-3 rounded-full font-semibold transition-all transform hover:scale-105 text-sm md:text-base">
-                Zaloguj się
-            </button>
+            <div
+                class="absolute bottom-20 left-20 text-5xl twinkle"
+                style="animation-delay: 1s"
+            >
+                🌟
+            </div>
+            <div
+                class="absolute top-1/2 right-10 text-3xl twinkle"
+                style="animation-delay: 1.5s"
+            >
+                ⭐
+            </div>
+            <div class="absolute bottom-40 right-1/3 text-4xl opacity-20">
+                ☁️
+            </div>
+            <div class="absolute top-1/3 left-1/4 text-6xl opacity-10">☁️</div>
         </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section class="relative z-10 py-8 md:py-16 px-4">
-        <div class="max-w-6xl mx-auto">
-            <div class="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
-                <div class="order-2 lg:order-1">
-                    <h1 class="heading-font text-3xl md:text-5xl lg:text-6xl font-bold text-purple-800 mb-6 leading-tight">
-                        Stwórz magiczną bajkę z trzech słów! 🌙
-                    </h1>
-                    <p class="text-lg md:text-xl text-purple-700 mb-8 leading-relaxed">
-                        Podaj nam trzy słowa i morał, a my stworzymy unikalną bajkę dla Twojego dziecka - kompletną z ilustracją i podkładem dźwiękowym!
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="#formularz" class="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-6 py-4 rounded-full font-bold text-lg transition-all transform hover:scale-105 text-center card-shadow">
-                            Zamów swoją bajkę ✨
-                        </a>
-                        <button class="bg-white hover:bg-purple-50 text-purple-600 border-2 border-purple-300 px-6 py-4 rounded-full font-bold text-lg transition-all text-center">
-                            Darmowa bajka 🎁
-                        </button>
+        <!-- Navigation -->
+        <nav class="relative z-10 py-6 px-4">
+            <div class="max-w-6xl mx-auto flex justify-between items-center">
+                <div
+                    class="heading-font text-2xl md:text-3xl font-bold text-purple-700"
+                >
+                    Bajki z Trzech Słów 📚✨
+                </div>
+                <button
+                    class="bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 md:px-6 md:py-3 rounded-full font-semibold transition-all transform hover:scale-105 text-sm md:text-base"
+                >
+                    Zaloguj się
+                </button>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="relative z-10 py-8 md:py-16 px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
+                    <div class="order-2 lg:order-1">
+                        <h1
+                            class="heading-font text-3xl md:text-5xl lg:text-6xl font-bold text-purple-800 mb-6 leading-tight"
+                        >
+                            Stwórz magiczną bajkę z trzech słów! 🌙
+                        </h1>
+                        <p
+                            class="text-lg md:text-xl text-purple-700 mb-8 leading-relaxed"
+                        >
+                            Podaj nam trzy słowa i morał, a my stworzymy
+                            unikalną bajkę dla Twojego dziecka - kompletną z
+                            ilustracją i podkładem dźwiękowym!
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <a
+                                href="#formularz"
+                                class="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-6 py-4 rounded-full font-bold text-lg transition-all transform hover:scale-105 text-center card-shadow"
+                            >
+                                Zamów swoją bajkę ✨
+                            </a>
+                            <button
+                                class="bg-white hover:bg-purple-50 text-purple-600 border-2 border-purple-300 px-6 py-4 rounded-full font-bold text-lg transition-all text-center"
+                            >
+                                Darmowa bajka 🎁
+                            </button>
+                        </div>
+                    </div>
+                    <div class="order-1 lg:order-2 float-animation">
+                        <img
+                            src="glowny.jpg"
+                            alt="Bajki z Trzech Słów"
+                            class="rounded-3xl card-shadow w-full hover:transform hover:scale-105 transition-all duration-300"
+                        />
                     </div>
                 </div>
-                <div class="order-1 lg:order-2 float-animation">
-                    <img src="glowny.jpg" alt="Bajki z Trzech Słów" class="rounded-3xl card-shadow w-full">
-                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- How it works -->
-    <section class="relative z-10 py-12 md:py-20 px-4">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="heading-font text-3xl md:text-4xl font-bold text-center text-purple-800 mb-4">
-                Jak to działa? 🎨
-            </h2>
-            <p class="text-center text-purple-600 mb-12 text-lg">
-                Trzy proste kroki do wyjątkowej bajki
-            </p>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white rounded-3xl p-8 text-center card-shadow hover:transform hover:scale-105 transition-all">
-                    <div class="text-5xl mb-4">📝</div>
-                    <h3 class="heading-font text-xl font-bold text-purple-700 mb-3">Krok 1</h3>
-                    <p class="text-purple-600">Wpisz trzy słowa kluczowe i morał, który chcesz przekazać</p>
-                </div>
-
-                <div class="bg-white rounded-3xl p-8 text-center card-shadow hover:transform hover:scale-105 transition-all">
-                    <div class="text-5xl mb-4">⏳</div>
-                    <h3 class="heading-font text-xl font-bold text-purple-700 mb-3">Krok 2</h3>
-                    <p class="text-purple-600">Poczekaj chwilkę, aż nasza magia zadziała</p>
-                </div>
-
-                <div class="bg-white rounded-3xl p-8 text-center card-shadow hover:transform hover:scale-105 transition-all">
-                    <div class="text-5xl mb-4">📧</div>
-                    <h3 class="heading-font text-xl font-bold text-purple-700 mb-3">Krok 3</h3>
-                    <p class="text-purple-600">Odbierz bajkę na maila z obrazkiem i dźwiękiem</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why worth it -->
-    <section class="relative z-10 py-12 md:py-20 px-4 bg-white/50">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="heading-font text-3xl md:text-4xl font-bold text-center text-purple-800 mb-12">
-                Dlaczego warto? 🌟
-            </h2>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-gradient-to-br from-purple-100 to-pink-100 rounded-2xl p-6 hover:transform hover:scale-105 transition-all">
-                    <div class="text-3xl mb-3">🎨</div>
-                    <h3 class="font-bold text-purple-800 mb-2">Rozwija wyobraźnię</h3>
-                    <p class="text-purple-600">Każda bajka pobudza kreatywność i wyobraźnię Twojego dziecka</p>
-                </div>
-
-                <div class="bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl p-6 hover:transform hover:scale-105 transition-all">
-                    <div class="text-3xl mb-3">💎</div>
-                    <h3 class="font-bold text-purple-800 mb-2">Każda bajka jest unikalna</h3>
-                    <p class="text-purple-600">Stworzona specjalnie dla Twojego dziecka, niepowtarzalna historia</p>
-                </div>
-
-                <div class="bg-gradient-to-br from-pink-100 to-yellow-100 rounded-2xl p-6 hover:transform hover:scale-105 transition-all">
-                    <div class="text-3xl mb-3">🌙</div>
-                    <h3 class="font-bold text-purple-800 mb-2">Idealna na dobranoc</h3>
-                    <p class="text-purple-600">Spokojne historie z morałem, idealne do czytania przed snem</p>
-                </div>
-
-                <div class="bg-gradient-to-br from-green-100 to-blue-100 rounded-2xl p-6 hover:transform hover:scale-105 transition-all">
-                    <div class="text-3xl mb-3">🎵</div>
-                    <h3 class="font-bold text-purple-800 mb-2">Z dźwiękiem i muzyką</h3>
-                    <p class="text-purple-600">Profesjonalny lektor i muzyka tworzą magiczny klimat</p>
-                </div>
-
-                <div class="bg-gradient-to-br from-yellow-100 to-orange-100 rounded-2xl p-6 hover:transform hover:scale-105 transition-all">
-                    <div class="text-3xl mb-3">🎁</div>
-                    <h3 class="font-bold text-purple-800 mb-2">Pierwsza bajka gratis</h3>
-                    <p class="text-purple-600">Po zalogowaniu możesz stworzyć pierwszą bajkę za darmo</p>
-                </div>
-
-                <div class="bg-gradient-to-br from-purple-100 to-blue-100 rounded-2xl p-6 hover:transform hover:scale-105 transition-all">
-                    <div class="text-3xl mb-3">📚</div>
-                    <h3 class="font-bold text-purple-800 mb-2">Wartościowe treści</h3>
-                    <p class="text-purple-600">Każda bajka niesie ze sobą ważny morał i naukę</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Form Section -->
-    <section id="formularz" class="relative z-10 py-12 md:py-20 px-4">
-        <div class="max-w-2xl mx-auto">
-            <div class="bg-white rounded-3xl p-8 md:p-12 card-shadow">
-                <h2 class="heading-font text-3xl md:text-4xl font-bold text-center text-purple-800 mb-4">
-                    Zamów swoją bajkę 📖
+        <!-- How it works -->
+        <section class="relative z-10 py-12 md:py-20 px-4">
+            <div class="max-w-6xl mx-auto">
+                <h2
+                    class="heading-font text-3xl md:text-4xl font-bold text-center text-purple-800 mb-4"
+                >
+                    Jak to działa? 🎨
                 </h2>
-                <p class="text-center text-purple-600 mb-8">
-                    Wypełnij formularz, a wyślemy Ci unikalną bajkę!
+                <p class="text-center text-purple-600 mb-12 text-lg">
+                    Trzy proste kroki do wyjątkowej bajki
                 </p>
 
-                <form id="storyForm" class="space-y-6">
-                    <div>
-                        <label class="block text-purple-700 font-semibold mb-2" for="name">
-                            Twoje imię
-                        </label>
-                        <input type="text" id="name" name="name" required
-                            class="w-full px-4 py-3 rounded-2xl border-2 border-purple-200 focus:border-purple-400 focus:outline-none transition-colors"
-                            placeholder="np. Anna">
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div
+                        class="bg-white rounded-3xl p-8 text-center card-shadow card-hover slide-in"
+                    >
+                        <div class="text-5xl mb-4">📝</div>
+                        <h3
+                            class="heading-font text-xl font-bold text-purple-700 mb-3"
+                        >
+                            Krok 1
+                        </h3>
+                        <p class="text-purple-600">
+                            Wpisz trzy słowa kluczowe i morał, który chcesz
+                            przekazać
+                        </p>
                     </div>
 
-                    <div>
-                        <label class="block text-purple-700 font-semibold mb-2" for="email">
-                            Adres e-mail
-                        </label>
-                        <input type="email" id="email" name="email" required
-                            class="w-full px-4 py-3 rounded-2xl border-2 border-purple-200 focus:border-purple-400 focus:outline-none transition-colors"
-                            placeholder="np. anna@example.com">
+                    <div
+                        class="bg-white rounded-3xl p-8 text-center card-shadow card-hover slide-in"
+                        style="animation-delay: 0.1s"
+                    >
+                        <div class="text-5xl mb-4">⏳</div>
+                        <h3
+                            class="heading-font text-xl font-bold text-purple-700 mb-3"
+                        >
+                            Krok 2
+                        </h3>
+                        <p class="text-purple-600">
+                            Poczekaj chwilkę, aż nasza magia zadziała
+                        </p>
                     </div>
 
-                    <div>
-                        <label class="block text-purple-700 font-semibold mb-2">
-                            Trzy magiczne słowa
-                        </label>
-                        <div class="grid grid-cols-3 gap-3">
-                            <input type="text" name="word1" required
-                                class="px-4 py-3 rounded-2xl border-2 border-purple-200 focus:border-purple-400 focus:outline-none transition-colors text-center"
-                                placeholder="Słowo 1">
-                            <input type="text" name="word2" required
-                                class="px-4 py-3 rounded-2xl border-2 border-purple-200 focus:border-purple-400 focus:outline-none transition-colors text-center"
-                                placeholder="Słowo 2">
-                            <input type="text" name="word3" required
-                                class="px-4 py-3 rounded-2xl border-2 border-purple-200 focus:border-purple-400 focus:outline-none transition-colors text-center"
-                                placeholder="Słowo 3">
-                        </div>
-                        <p class="text-sm text-purple-500 mt-2">np. pies, lokomotywa, chmurka</p>
+                    <div
+                        class="bg-white rounded-3xl p-8 text-center card-shadow card-hover slide-in"
+                        style="animation-delay: 0.2s"
+                    >
+                        <div class="text-5xl mb-4">📧</div>
+                        <h3
+                            class="heading-font text-xl font-bold text-purple-700 mb-3"
+                        >
+                            Krok 3
+                        </h3>
+                        <p class="text-purple-600">
+                            Odbierz bajkę na maila z obrazkiem i dźwiękiem
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why worth it -->
+        <section class="relative z-10 py-12 md:py-20 px-4 bg-white/50">
+            <div class="max-w-6xl mx-auto">
+                <h2
+                    class="heading-font text-3xl md:text-4xl font-bold text-center text-purple-800 mb-12"
+                >
+                    Dlaczego warto? 🌟
+                </h2>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div
+                        class="bg-gradient-to-br from-purple-100 to-pink-100 rounded-2xl p-6 hover:transform hover:scale-105 transition-all"
+                    >
+                        <div class="text-3xl mb-3">🎨</div>
+                        <h3 class="font-bold text-purple-800 mb-2">
+                            Rozwija wyobraźnię
+                        </h3>
+                        <p class="text-purple-600">
+                            Każda bajka pobudza kreatywność i wyobraźnię Twojego
+                            dziecka
+                        </p>
                     </div>
 
-                    <div>
-                        <label class="block text-purple-700 font-semibold mb-2" for="moral">
-                            Morał bajki
-                        </label>
-                        <textarea id="moral" name="moral" rows="3" required
-                            class="w-full px-4 py-3 rounded-2xl border-2 border-purple-200 focus:border-purple-400 focus:outline-none transition-colors resize-none"
-                            placeholder="np. Przyjaźń jest najważniejsza"></textarea>
+                    <div
+                        class="bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl p-6 hover:transform hover:scale-105 transition-all"
+                    >
+                        <div class="text-3xl mb-3">💎</div>
+                        <h3 class="font-bold text-purple-800 mb-2">
+                            Każda bajka jest unikalna
+                        </h3>
+                        <p class="text-purple-600">
+                            Stworzona specjalnie dla Twojego dziecka,
+                            niepowtarzalna historia
+                        </p>
                     </div>
 
-                    <button type="submit"
-                        class="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white py-4 rounded-full font-bold text-lg transition-all transform hover:scale-105">
-                        Wyślij zamówienie ✨
-                    </button>
-                </form>
+                    <div
+                        class="bg-gradient-to-br from-pink-100 to-yellow-100 rounded-2xl p-6 hover:transform hover:scale-105 transition-all"
+                    >
+                        <div class="text-3xl mb-3">🌙</div>
+                        <h3 class="font-bold text-purple-800 mb-2">
+                            Idealna na dobranoc
+                        </h3>
+                        <p class="text-purple-600">
+                            Spokojne historie z morałem, idealne do czytania
+                            przed snem
+                        </p>
+                    </div>
 
-                <div id="successMessage" class="hidden mt-6 p-6 bg-green-100 border-2 border-green-300 rounded-2xl">
-                    <div class="flex items-center justify-center">
-                        <div class="text-4xl mr-3">🎉</div>
+                    <div
+                        class="bg-gradient-to-br from-green-100 to-blue-100 rounded-2xl p-6 hover:transform hover:scale-105 transition-all"
+                    >
+                        <div class="text-3xl mb-3">🎵</div>
+                        <h3 class="font-bold text-purple-800 mb-2">
+                            Z dźwiękiem i muzyką
+                        </h3>
+                        <p class="text-purple-600">
+                            Profesjonalny lektor i muzyka tworzą magiczny klimat
+                        </p>
+                    </div>
+
+                    <div
+                        class="bg-gradient-to-br from-yellow-100 to-orange-100 rounded-2xl p-6 hover:transform hover:scale-105 transition-all"
+                    >
+                        <div class="text-3xl mb-3">🎁</div>
+                        <h3 class="font-bold text-purple-800 mb-2">
+                            Pierwsza bajka gratis
+                        </h3>
+                        <p class="text-purple-600">
+                            Po zalogowaniu możesz stworzyć pierwszą bajkę za
+                            darmo
+                        </p>
+                    </div>
+
+                    <div
+                        class="bg-gradient-to-br from-purple-100 to-blue-100 rounded-2xl p-6 hover:transform hover:scale-105 transition-all"
+                    >
+                        <div class="text-3xl mb-3">📚</div>
+                        <h3 class="font-bold text-purple-800 mb-2">
+                            Wartościowe treści
+                        </h3>
+                        <p class="text-purple-600">
+                            Każda bajka niesie ze sobą ważny morał i naukę
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Form Section -->
+        <section id="formularz" class="relative z-10 py-12 md:py-20 px-4">
+            <div class="max-w-2xl mx-auto">
+                <div class="bg-white rounded-3xl p-8 md:p-12 card-shadow">
+                    <h2
+                        class="heading-font text-3xl md:text-4xl font-bold text-center text-purple-800 mb-4"
+                    >
+                        Zamów swoją bajkę 📖
+                    </h2>
+                    <p class="text-center text-purple-600 mb-8">
+                        Wypełnij formularz, a wyślemy Ci unikalną bajkę!
+                    </p>
+
+                    <form id="storyForm" class="space-y-6">
                         <div>
-                            <p class="text-green-800 font-bold text-lg">Dziękujemy!</p>
-                            <p class="text-green-700">Twoja bajka zostanie wysłana na podany adres e-mail.</p>
+                            <label
+                                class="block text-purple-700 font-semibold mb-2"
+                                for="name"
+                            >
+                                Twoje imię
+                            </label>
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                required
+                                class="w-full px-4 py-3 rounded-2xl border-2 border-purple-200 focus:border-purple-400 focus:outline-none transition-colors magic-input"
+                                placeholder="np. Anna"
+                            />
+                        </div>
+
+                        <div>
+                            <label
+                                class="block text-purple-700 font-semibold mb-2"
+                                for="email"
+                            >
+                                Adres e-mail
+                            </label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                required
+                                class="w-full px-4 py-3 rounded-2xl border-2 border-purple-200 focus:border-purple-400 focus:outline-none transition-colors magic-input"
+                                placeholder="np. anna@example.com"
+                            />
+                        </div>
+
+                        <div>
+                            <label
+                                class="block text-purple-700 font-semibold mb-2"
+                            >
+                                Trzy magiczne słowa
+                            </label>
+                            <div class="grid grid-cols-3 gap-3">
+                                <input
+                                    type="text"
+                                    name="word1"
+                                    required
+                                    class="px-4 py-3 rounded-2xl border-2 border-purple-200 focus:border-purple-400 focus:outline-none transition-colors text-center magic-input"
+                                    placeholder="Słowo 1"
+                                />
+                                <input
+                                    type="text"
+                                    name="word2"
+                                    required
+                                    class="px-4 py-3 rounded-2xl border-2 border-purple-200 focus:border-purple-400 focus:outline-none transition-colors text-center magic-input"
+                                    placeholder="Słowo 2"
+                                />
+                                <input
+                                    type="text"
+                                    name="word3"
+                                    required
+                                    class="px-4 py-3 rounded-2xl border-2 border-purple-200 focus:border-purple-400 focus:outline-none transition-colors text-center magic-input"
+                                    placeholder="Słowo 3"
+                                />
+                            </div>
+                            <p class="text-sm text-purple-500 mt-2">
+                                np. pies, lokomotywa, chmurka
+                            </p>
+                        </div>
+
+                        <div>
+                            <label
+                                class="block text-purple-700 font-semibold mb-2"
+                                for="moral"
+                            >
+                                Morał bajki
+                            </label>
+                            <textarea
+                                id="moral"
+                                name="moral"
+                                rows="3"
+                                required
+                                class="w-full px-4 py-3 rounded-2xl border-2 border-purple-200 focus:border-purple-400 focus:outline-none transition-colors resize-none magic-input"
+                                placeholder="np. Przyjaźń jest najważniejsza"
+                            ></textarea>
+                        </div>
+
+                        <button
+                            type="submit"
+                            class="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white py-4 rounded-full font-bold text-lg transition-all transform hover:scale-105 shimmer-button"
+                        >
+                            Wyślij zamówienie ✨
+                        </button>
+                    </form>
+
+                    <div
+                        id="successMessage"
+                        class="hidden mt-6 p-6 bg-green-100 border-2 border-green-300 rounded-2xl"
+                    >
+                        <div class="flex items-center justify-center">
+                            <div class="text-4xl mr-3">🎉</div>
+                            <div>
+                                <p class="text-green-800 font-bold text-lg">
+                                    Dziękujemy!
+                                </p>
+                                <p class="text-green-700">
+                                    Twoja bajka zostanie wysłana na podany adres
+                                    e-mail.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Free Story Section -->
-    <section class="relative z-10 py-12 md:py-20 px-4 bg-purple-50/50">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="heading-font text-3xl md:text-4xl font-bold text-purple-800 mb-6">
-                Pierwsza bajka za darmo! 🎁
-            </h2>
-            <p class="text-lg text-purple-600 mb-8 max-w-2xl mx-auto">
-                Po zalogowaniu każdy użytkownik może stworzyć swoją pierwszą, darmową bajkę.
-                Przekonaj się, jak magiczne potrafią być historie stworzone specjalnie dla Twojego dziecka!
-            </p>
-            <button class="bg-white hover:bg-purple-50 text-purple-600 border-2 border-purple-300 px-8 py-4 rounded-full font-bold text-lg transition-all card-shadow">
-                Zaloguj się, aby dostać darmową bajkę
-            </button>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="relative z-10 py-8 px-4 bg-purple-100/50">
-        <div class="max-w-6xl mx-auto text-center">
-            <p class="text-purple-700 font-medium">
-                Projekt stworzony przez Adama – AI Story Creator ✨
-            </p>
-            <div class="mt-4 flex justify-center gap-6">
-                <a href="#" class="text-purple-600 hover:text-purple-800 transition-colors">Kontakt</a>
-                <a href="#" class="text-purple-600 hover:text-purple-800 transition-colors">Polityka prywatności</a>
-                <a href="#" class="text-purple-600 hover:text-purple-800 transition-colors">Regulamin</a>
+        <!-- Free Story Section -->
+        <section class="relative z-10 py-12 md:py-20 px-4 bg-purple-50/50">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2
+                    class="heading-font text-3xl md:text-4xl font-bold text-purple-800 mb-6"
+                >
+                    Pierwsza bajka za darmo! 🎁
+                </h2>
+                <p class="text-lg text-purple-600 mb-8 max-w-2xl mx-auto">
+                    Po zalogowaniu każdy użytkownik może stworzyć swoją
+                    pierwszą, darmową bajkę. Przekonaj się, jak magiczne
+                    potrafią być historie stworzone specjalnie dla Twojego
+                    dziecka!
+                </p>
+                <button
+                    class="bg-white hover:bg-purple-50 text-purple-600 border-2 border-purple-300 px-8 py-4 rounded-full font-bold text-lg transition-all card-shadow"
+                >
+                    Zaloguj się, aby dostać darmową bajkę
+                </button>
             </div>
-            <p class="text-purple-500 text-sm mt-4">© 2024 Bajki z Trzech Słów. Wszystkie prawa zastrzeżone.</p>
-        </div>
-    </footer>
+        </section>
 
-    <script>
-        document.getElementById('storyForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
+        <!-- Footer -->
+        <footer class="relative z-10 py-8 px-4 bg-purple-100/50">
+            <div class="max-w-6xl mx-auto text-center">
+                <p class="text-purple-700 font-medium">
+                    Projekt stworzony przez Adama – AI Story Creator ✨
+                </p>
+                <div class="mt-4 flex justify-center gap-6">
+                    <a
+                        href="#"
+                        class="text-purple-600 hover:text-purple-800 transition-colors"
+                        >Kontakt</a
+                    >
+                    <a
+                        href="#"
+                        class="text-purple-600 hover:text-purple-800 transition-colors"
+                        >Polityka prywatności</a
+                    >
+                    <a
+                        href="#"
+                        class="text-purple-600 hover:text-purple-800 transition-colors"
+                        >Regulamin</a
+                    >
+                </div>
+                <p class="text-purple-500 text-sm mt-4">
+                    © 2024 Bajki z Trzech Słów. Wszystkie prawa zastrzeżone.
+                </p>
+            </div>
+        </footer>
 
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                words: [
-                    document.querySelector('input[name="word1"]').value,
-                    document.querySelector('input[name="word2"]').value,
-                    document.querySelector('input[name="word3"]').value
-                ],
-                moral: document.getElementById('moral').value
-            };
+        <script>
+            document
+                .getElementById("storyForm")
+                .addEventListener("submit", async function (e) {
+                    e.preventDefault();
 
-            try {
-                const response = await fetch('/api/send-story-request', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(formData)
+                    const formData = {
+                        name: document.getElementById("name").value,
+                        email: document.getElementById("email").value,
+                        words: [
+                            document.querySelector('input[name="word1"]').value,
+                            document.querySelector('input[name="word2"]').value,
+                            document.querySelector('input[name="word3"]').value,
+                        ],
+                        moral: document.getElementById("moral").value,
+                    };
+
+                    try {
+                        const response = await fetch(
+                            "/api/send-story-request",
+                            {
+                                method: "POST",
+                                headers: {
+                                    "Content-Type": "application/json",
+                                },
+                                body: JSON.stringify(formData),
+                            },
+                        );
+
+                        if (response.ok) {
+                            document.getElementById("storyForm").style.display =
+                                "none";
+                            document
+                                .getElementById("successMessage")
+                                .classList.remove("hidden");
+
+                            setTimeout(() => {
+                                document.getElementById("storyForm").reset();
+                                document.getElementById(
+                                    "storyForm",
+                                ).style.display = "block";
+                                document
+                                    .getElementById("successMessage")
+                                    .classList.add("hidden");
+                            }, 5000);
+                        } else {
+                            alert("Wystąpił błąd. Spróbuj ponownie.");
+                        }
+                    } catch (error) {
+                        console.error("Error:", error);
+                        alert("Wystąpił błąd. Spróbuj ponownie.");
+                    }
                 });
-
-                if (response.ok) {
-                    document.getElementById('storyForm').style.display = 'none';
-                    document.getElementById('successMessage').classList.remove('hidden');
-
-                    setTimeout(() => {
-                        document.getElementById('storyForm').reset();
-                        document.getElementById('storyForm').style.display = 'block';
-                        document.getElementById('successMessage').classList.add('hidden');
-                    }, 5000);
-                } else {
-                    alert('Wystąpił błąd. Spróbuj ponownie.');
-                }
-            } catch (error) {
-                console.error('Error:', error);
-                alert('Wystąpił błąd. Spróbuj ponownie.');
-            }
-        });
-    </script>
-</body>
+        </script>
+    </body>
 </html>
