@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Dark blue background -->
+  <rect width="32" height="32" rx="4" fill="#1e3a5f"/>
+
+  <!-- Moon -->
+  <path d="M22 8 C20 6, 20 10, 22 12 C18 12, 16 8, 22 8" fill="#f4d35e" opacity="0.9"/>
+
+  <!-- Stars -->
+  <path d="M8 6 L8.5 7.5 L10 6 L8.5 7 L8 6" fill="#f4d35e"/>
+  <path d="M14 10 L14.3 10.9 L15.2 10 L14.3 10.6 L14 10" fill="#f4d35e"/>
+  <path d="M6 14 L6.3 14.9 L7.2 14 L6.3 14.6 L6 14" fill="#f4d35e"/>
+
+  <!-- Book/Speech bubble with "3" -->
+  <ellipse cx="16" cy="22" rx="10" ry="7" fill="#f5ead4"/>
+  <ellipse cx="16" cy="22" rx="9" ry="6" fill="#fff"/>
+
+  <!-- Number 3 -->
+  <text x="16" y="26" font-family="Comfortaa, Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#1e3a5f">3</text>
+</svg>

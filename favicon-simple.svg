@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Dark blue night sky background -->
+  <rect width="32" height="32" rx="4" fill="#1e3a5f"/>
+
+  <!-- Moon crescent -->
+  <path d="M24 7 C22 5, 22 9, 24 11 C20 11, 18 7, 24 7" fill="#f4d35e" opacity="0.8"/>
+
+  <!-- Small stars -->
+  <circle cx="8" cy="8" r="0.8" fill="#f4d35e"/>
+  <circle cx="12" cy="5" r="0.6" fill="#f4d35e"/>
+  <circle cx="6" cy="14" r="0.7" fill="#f4d35e"/>
+  <circle cx="27" cy="12" r="0.5" fill="#f4d35e"/>
+  <circle cx="10" cy="26" r="0.6" fill="#f4d35e"/>
+
+  <!-- White circle background for number -->
+  <circle cx="16" cy="19" r="9" fill="#fff" opacity="0.95"/>
+
+  <!-- Number 3 in playful style -->
+  <text x="16" y="24" font-family="Comfortaa, Comic Sans MS, cursive" font-size="14" font-weight="bold" text-anchor="middle" fill="#1e3a5f">3</text>
+</svg>
